@@ -7,23 +7,23 @@ import { Animal } from './animal.model';
   <h1>New Task</h1>
    <div>
       <label>Specie:</label>
-      <input #specie>
+      <input #specie><br>
       <label>Name:</label>
-      <input #name>
+      <input #name><br>
       <label>Age:</label>
-      <input #age>
+      <input #age><br>
       <label>Diet:</label>
-      <input #diet>
+      <input #diet><br>
       <label>Location:</label>
-      <input #location>
+      <input #location><br>
       <label>Caretakers:</label>
-      <input #caretakers>
+      <input #caretakers><br>
       <label>Sex:</label>
-      <input #sex>
+      <input #sex><br>
       <label>Likes:</label>
-      <input #likes>
+      <input #likes><br>
       <label>Dislikes:</label>
-      <input #disklikes>
+      <input #disklikes><br>
       <button (click)="submitForm(specie.value, name.value, age.value, diet.value, location.value, caretakers.value, sex.value, likes.value, disklikes.value); specie.value=''; name.value=''; age.value=''; diet.value=''; location.value=''; caretakers.value=''; sex.value=''; likes.value=''; disklikes.value='';">Add</button>
    </div>
   `

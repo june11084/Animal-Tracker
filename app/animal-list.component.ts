@@ -8,11 +8,11 @@ import { Animal } from './animal.model';
     <option value="juveniles">Juveniles</option>
     <option value="adults" selected="selected">Adults</option>
   </select>
-  <ul>
-    <li *ngFor="let currentAnimal of childAnimalList | age: filterByAge">{{currentAnimal.specie}} {{currentAnimal.name}} {{currentAnimal.age}} {{currentAnimal.diet}} {{currentAnimal.location}} {{currentAnimal.caretakers}} {{currentAnimal.sex}} {{currentAnimal.likes}} {{currentAnimal.dislikes}}
-      <button (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
+  <ol>
+    <li *ngFor="let currentAnimal of childAnimalList | age: filterByAge">Speice: {{currentAnimal.specie}}<br>Name: {{currentAnimal.name}}<br>Age: {{currentAnimal.age}}<br>Diet: {{currentAnimal.diet}}<br>Location: {{currentAnimal.location}}<br>Caretakers: {{currentAnimal.caretakers}}<br>Sex: {{currentAnimal.sex}}<br>Likes: {{currentAnimal.likes}}<br>Dislikes: {{currentAnimal.dislikes}}<br><button (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
+    <hr>
     </li>
-  </ul>
+  </ol>
   `
 })
 
