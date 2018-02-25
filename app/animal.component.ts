@@ -5,10 +5,10 @@ import { Animal } from './animal.model';
    selector: 'app-root',
    template: `
    <div class="container">
-      <task-list [childTaskList]="masterTaskList" (clickSender)="editTask($event)"></task-list>
+      <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
       <hr>
-      <edit-task [childSelectedTask]="selectedTask" (doneButtonClickedSender)="finishedEditing()"></edit-task>
-      <new-task (newTaskSender)="addTask($event)"></new-task>
+      <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickedSender)="finishedEditing()"></edit-animal>
+      <new-animal (newTaskSender)="addTask($event)"></new-animal>
    </div>
    `
 })
@@ -17,7 +17,10 @@ export class AppComponent {
    selectedAnimal = null;
 
    masterAnimalList: Animal[] = [
-      new Animal('Arctic Fox', "moon", 2, "carnivore", "northern trail", 5, "female", "cool shade", "loud noises"),
+      new Animal('Arctic Fox', "moon", 1, "carnivore", "northern trail", 5, "female", "cool shade", "loud noises"),
+      new Animal('Arctic Fox', "Mercury", 1, "carnivore", "northern trail", 5, "female", "cool shade", "loud noises"),
+      new Animal('Arctic Fox',  "Plato", 2, "carnivore", "northern trail", 5, "female", "cool shade", "loud noises"),
+      new Animal('Arctic Fox', "mars", 3, "carnivore", "northern trail", 5, "female", "cool shade", "loud noises")
    ];
 
    editAnimal(clickedAnimal) {

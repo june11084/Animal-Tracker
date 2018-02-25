@@ -5,16 +5,27 @@ import { Animal } from './animal.model';
   selector: 'animal-list',
   template: `
   <select (change)="onChange($event.target.value)">
-    <option value="allTasks">All Tasks</option>
-    <option value="completedTasks">Completed Tasks</option>
-    <option value="incompleteTasks" selected="selected">Incomplete Tasks</option>
+    <option value="juveniles">Juveniles</option>
+    <option value="adults" selected="selected">Adults</option>
   </select>
   <ul>
-    <li (click)="isDone(currentTask)" *ngFor="let currentTask of childTaskList | completeness:filterByCompleteness">{{currentTask.description}} {{currentTask.priority}}
-      <input *ngIf="currentTask.done === true" type="checkbox" checked (click)="toggleDone(currentTask, false)"/>
-      <input *ngIf="currentTask.done === false" type="checkbox" (click)="toggleDone(currentTask, true)"/>
-      <button (click)="editButtonHasBeenClicked(currentTask)">Edit!</button>
+    <li *ngFor="let currentAnimal of childAnimalList | age: filterByAge">{{currentAnimal.specie}} {{currentAnimal.name}} {{currentAnimal.age}} {{currentAnimal.diet}} {{currentAnimal.location}} {{currentAnimal.caretakers}} {{currentAnimal.sex}} {{currentAnimal.likes}} {{currentAnimal.dislikes}}
+      <button (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
     </li>
   </ul>
   `
 })
+
+export class AnimalListComponent {
+   @Input() childAnimalList: Animal[];
+   @Output() clickSender = new EventEmitter();
+   filterByAge: string = "adults";
+
+   editButtonHasBeenClicked(animalToEdit: Animal) {
+      this.clickSender.emit(animalToEdit);
+   }
+
+   onChange(optionFromMenu) {
+     this.filterByAge = optionFromMenu;
+   }
+}
