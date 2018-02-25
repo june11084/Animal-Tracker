@@ -1,4 +1,4 @@
-# Doctor Lookup
+# Animal-tracker
 
 This is an Epicodus friday project for Javascript that focuses on using angular2 with components, seperating components for each function of the app, using methods such as "Data down, Action up", and filter using pipe.
 
