@@ -10,11 +10,11 @@ import { Animal } from './animal.model';
           <hr>
           <h3>Edit Animal</h3>
           <label>Enter Animal Name:</label>
-          <input [(ngModel)]="childSelectedAnimal.name">
-          <label>Enter Animal Age:</label><br>
-          <input [(ngModel)]="childSelectedAnimal.age">
-          <label>Enter Animal Caretakers:</label><br>
-          <input [(ngModel)]="childSelectedAnimal.caretakers">
+          <input [(ngModel)]="childSelectedAnimal.name"><br>
+          <label>Enter Animal Age:</label>
+          <input [(ngModel)]="childSelectedAnimal.age"><br>
+          <label>Enter Animal Caretakers:</label>
+          <input [(ngModel)]="childSelectedAnimal.caretakers"><br>
           <button (click)="doneButtonClicked()" (doneButtonClickedSender)="finishedEditing()">Done</button>
         </div>
       </div>
