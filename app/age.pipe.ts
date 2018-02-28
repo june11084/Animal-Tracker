@@ -24,6 +24,13 @@ export class AgePipe implements PipeTransform {
          }
        }
        return output;
+    } else if (desiredAge === "all") {
+       for (var i = 0; i < input.length; i++) {
+         if (input[i].age >= 2) {
+           output.push(input[i]);
+         }
+       }
+       return output;
      } else {
        return input;
      }

@@ -4,6 +4,7 @@ import { Animal } from './animal.model';
 @Component({
    selector: 'app-root',
    template: `
+   
    <div class="container">
       <animal-list [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></animal-list>
       <hr>

@@ -5,8 +5,9 @@ import { Animal } from './animal.model';
   selector: 'animal-list',
   template: `
   <select (change)="onChange($event.target.value)">
+    <option value="all" selected="selected">All</option>
     <option value="juveniles">Juveniles</option>
-    <option value="adults" selected="selected">Adults</option>
+    <option value="adults">Adults</option>
   </select>
   <ol>
     <li *ngFor="let currentAnimal of childAnimalList | age: filterByAge">Speice: {{currentAnimal.specie}}<br>Name: {{currentAnimal.name}}<br>Age: {{currentAnimal.age}}<br>Diet: {{currentAnimal.diet}}<br>Location: {{currentAnimal.location}}<br>Caretakers: {{currentAnimal.caretakers}}<br>Sex: {{currentAnimal.sex}}<br>Likes: {{currentAnimal.likes}}<br>Dislikes: {{currentAnimal.dislikes}}<br><button (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
