@@ -1,11 +1,11 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component,Input, Output, EventEmitter } from '@angular/core';
 import { Animal } from './animal.model';
 
 @Component({
   selector: 'new-animal',
   template: `
-  <h1>New ANIMAL</h1>
-   <div>
+   <div *ngIf="childAddingAnimal">
+      <h1>New ANIMAL</h1>
       <label>Specie:</label>
       <input #specie><br>
       <label>Name:</label>
@@ -31,6 +31,7 @@ import { Animal } from './animal.model';
 
 export class NewAnimalComponent {
    @Output() newAnimalSender = new EventEmitter();
+   @Input() childAddingAnimal: string;
    submitForm(specie:string, name:string, age:number, diet:string, location:string, caretakers:number, sex:string, likes:string, dislikes:string) {
       var newAnimalToAdd: Animal = new Animal(specie, name, age, diet, location, caretakers, sex, likes, dislikes);
       this.newAnimalSender.emit(newAnimalToAdd);
