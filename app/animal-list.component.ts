@@ -20,7 +20,7 @@ import { Animal } from './animal.model';
 export class AnimalListComponent {
    @Input() childAnimalList: Animal[];
    @Output() clickSender = new EventEmitter();
-   filterByAge: string = "adults";
+   filterByAge: string = "all";
 
    editButtonHasBeenClicked(animalToEdit: Animal) {
       this.clickSender.emit(animalToEdit);
